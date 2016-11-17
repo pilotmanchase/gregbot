@@ -3,6 +3,8 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
+var request
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\hey/;///^\/cool guy$/;
@@ -31,7 +33,7 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : "WRONG!"//botResponse
+    "text" : request.text//"WRONG!"//botResponse
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);
