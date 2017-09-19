@@ -128,7 +128,7 @@ if (whichOne == 3){
       }
     } else if(whichOne == 7){
       return "Yeah, no problem asshole...";
-    } else if(whichOne == 7){
+    } else if(whichOne == 8){
       return results;
     } else{
      return "You idiot, I have no clue what to say";
