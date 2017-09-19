@@ -3,17 +3,19 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
-var chaseTest = "You moron, nothing is saved in this variable";
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
   
+  var chaseTest = "You moron, nothing is saved in this variable";
+  
+  
       //chaseTest = request.text;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(request,chaseTest);
     this.res.end();
   } else {
     console.log("don't care");
@@ -25,7 +27,7 @@ function respond() {
 function postMessage(request,chaseTest) {
   var botResponse, options, body, botReq;
 
-  botResponse = havoc();//"meme";//cool();
+  botResponse = havoc(chaseTest);//"meme";//cool();
 
   options = {
     hostname: 'api.groupme.com',
