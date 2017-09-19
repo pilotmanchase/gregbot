@@ -3,11 +3,13 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
+var chaseTest = "You moron, nothing is saved in this variable";
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
   
-  var chaseTest = request.text;
+      chaseTest = request.text;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
