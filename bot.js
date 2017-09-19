@@ -130,6 +130,7 @@ if (whichOne == 3){
       return "Yeah, no problem asshole...";
     } else if(whichOne == 8){
       return results;
+      console.log(results);
     } else{
      return "You idiot, I have no clue what to say";
     }
