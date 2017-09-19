@@ -50,15 +50,6 @@ function postMessage(request,whichOne) {
   body = {
     "bot_id" : botID,
     "text" : botResponse
-    
-    if(whichOne == "spam"){
-    "attachments" : [
-    {
-      "type"  : "image",
-      "url"   : "http://socialnewsdaily.com/wp-content/uploads/2014/05/rick-astley-rickrolling.jpg"
-    }
-  ]
-  }
   };
   
   function havoc(whichOne){
