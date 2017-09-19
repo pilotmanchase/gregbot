@@ -11,7 +11,7 @@ function respond() {
   var chaseTest = "You moron, nothing is saved in this variable";
   
   
-      //chaseTest = request.text;
+      chaseTest = request.text;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
