@@ -47,12 +47,8 @@ function postMessage(request,whichOne) {
     method: 'POST'
   };
   
-  //body = {
-    //"bot_id" : botID,
-    //"text" : botResponse
-    
-  //};
 if (whichOne == 3){ 
+  for (var i = 0; i < 5; i++){
   body = {
     "bot_id" : botID,
     "text" : botResponse,
@@ -62,6 +58,7 @@ if (whichOne == 3){
         "url"   : "https://i.groupme.com/634x462.gif.c4a21692cde84e77bd0355873d43b36c"
       }
     ]
+  }
   }
 } else {
     body = {
