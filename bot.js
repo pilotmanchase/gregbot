@@ -38,7 +38,7 @@ function postMessage(request,botRegex) {
     var botResponse;
     //if (true){// == /^\Greg/){
    
-    botResponse = "You're a cuck";
+    callback("You're a cuck");
       
     //}
     //else{
