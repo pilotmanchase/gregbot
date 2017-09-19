@@ -35,16 +35,14 @@ function postMessage(request,botRegex) {
   };
   
   function havoc(){
-    var botResponse;
     //if (true){// == /^\Greg/){
    
-    callback("You're a cuck");
+    return "You're a cuck";
       
     //}
     //else{
      //botResponse = "Nick is a cuck";
     //}
-    cb(botResponse);
   }
 
   console.log('sending ' + botResponse + ' to ' + botID);
