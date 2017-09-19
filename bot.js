@@ -6,10 +6,12 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
+  
+  var chaseTest = request.text;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(chaseTest);
     this.res.end();
   } else {
     console.log("don't care");
@@ -18,10 +20,10 @@ function respond() {
   }
 }
 
-function postMessage(request,botRegex) {
+function postMessage(request,chaseTest) {
   var botResponse, options, body, botReq;
 
-  botResponse = havoc();//"meme";//cool();
+  botResponse = havoc(chaseTest);//"meme";//cool();
 
   options = {
     hostname: 'api.groupme.com',
@@ -35,7 +37,7 @@ function postMessage(request,botRegex) {
   };
   
   function havoc(botRegex){
-    if (botRegex == "Greg"){
+    if (chaseTest == /^\Greg/){
    
     return "You're a cuck";
       
