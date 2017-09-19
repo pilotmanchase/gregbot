@@ -37,7 +37,7 @@ function postMessage(request,chaseTest) {
   };
   
   function havoc(botRegex){
-    if (chaseTest == /^\Greg/){
+    if (chaseTest == "Greg"){
    
     return "You're a cuck";
       
