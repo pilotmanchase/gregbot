@@ -8,6 +8,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
   var botRegexTest = /^\Nick/;
+  var spam = /^\spam/;
   
   var whichOne = 0;
   if(request.text && botRegex.test(request.text)) {
@@ -20,6 +21,12 @@ function respond() {
     whichOne = 2;
     postMessage(request,whichOne);
     this.res.end();
+  } else if(request.text && botRegexTest.test(request.text)){
+    this.res.writeHead(200);
+    whichOne = "spam";
+    postMessage(request,whichOne);
+    this.res.end();
+    
   } else {
     console.log("don't care");
     //this.res.writeHead(200);
@@ -43,6 +50,15 @@ function postMessage(request,whichOne) {
   body = {
     "bot_id" : botID,
     "text" : botResponse
+    
+    if(whichOne == "spam"){
+    "attachments" : [
+    {
+      "type"  : "image",
+      "url"   : "http://socialnewsdaily.com/wp-content/uploads/2014/05/rick-astley-rickrolling.jpg"
+    }
+  ]
+  }
   };
   
   function havoc(whichOne){
@@ -52,6 +68,8 @@ function postMessage(request,whichOne) {
       
     } else if(whichOne == 2){
      return "Yeah, that Nick guy is a real cuck"; 
+    } else if(whichOne == "spam"){
+     return "GET RICK ROLLED"; 
     }
     else{
      return "You idiot, I have no clue what to say";
