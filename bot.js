@@ -92,21 +92,28 @@ if (whichOne == 3){
   }
 }
   
-  function havoc(whichOne){
-    if (whichOne == 1){
-   
-    return "You're a cuck";
-      
-    } else if(whichOne == 2){
+  function havoc(whichOne){ //Controls what Greg says
+    if (whichOne == 1){  //Responce to Greg
+    return "You're a cuck";     
+    } else if(whichOne == 2){ //response to "Nick"
      return "Yeah, that Nick guy is a real cuck"; 
-    } else if(whichOne == 3){
+    } else if(whichOne == 3){ //Spam trigger
      return "GET RICK ROLLED"; 
-    } else if(whichOne == 4){
+    } else if(whichOne == 4){ //responce to Wtf
      return "Don't question me, bitch"; 
-    }  else if(whichOne == 5){
+    }  else if(whichOne == 5){ //response to "LOL"
      return "Who you laughing at you cuck?!"; 
-    }  else if(whichOne == 6){
-     return "No one give even the slightest shit what you do, say, or think... I mean, let's be real.  Moron."; 
+    }  else if(whichOne == 6){ //response to "I"
+     var random = Math.floor(Math.random() * 3);
+      if (random == 0){
+     return "No one gives even the slightest shit what you do, say, or think... I mean, let's be real.  Moron."; 
+      } else if(random == 1){
+        return "Seriously, you need to cool it with all this talk about you.  Don't you get it?  I DON'T LIKE YOU!";
+      } else if(random == 2){
+       return "Dude, you're a fucking cuck..."; 
+      } else {
+       return "I litterally could not care less... dumbass..."; 
+      }
     } else{
      return "You idiot, I have no clue what to say";
     }
