@@ -52,7 +52,7 @@ function postMessage(request,whichOne) {
     //"text" : botResponse
     
   //};
-  
+if (whichOne == 3){ 
   body = {
     "bot_id" : botID,
     "text" : botResponse,
@@ -63,6 +63,13 @@ function postMessage(request,whichOne) {
       }
     ]
   }
+} else {
+    body = {
+    "bot_id" : botID,
+    "text" : botResponse
+    
+  }
+}
   
   function havoc(whichOne){
     if (whichOne == 1){
