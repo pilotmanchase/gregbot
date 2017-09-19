@@ -55,7 +55,8 @@ function postMessage(request,whichOne) {
       "type"  : "image",
       "url"   : "http://socialnewsdaily.com/wp-content/uploads/2014/05/rick-astley-rickrolling.jpg"
     }
-  ] 
+      ] 
+    };
   }
   body = {
     "bot_id" : botID,
