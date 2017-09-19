@@ -7,16 +7,20 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
+      botRegxTest = /^\Nick/;
   
-  var chaseTest = "You moron, nothing is saved in this variable";
-  
-  
-      chaseTest = botRegex;
-
+  var whichOne = 0;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
+    whichOne = 1;
     postMessage();
     this.res.end();
+  } else if(request.text && botRegexTest.test(request.text)){
+    this.res.writeHead(200);
+    whichOne = 2;
+    postMessage();
+    this.res.end();
+  }
   } else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -24,10 +28,10 @@ function respond() {
   }
 }
 
-function postMessage(request,chaseTest) {
+function postMessage(request,whichOne) {
   var botResponse, options, body, botReq;
 
-  botResponse = havoc(chaseTest);//"meme";//cool();
+  botResponse = havoc(whichOne);//"meme";//cool();
 
   options = {
     hostname: 'api.groupme.com',
@@ -40,14 +44,14 @@ function postMessage(request,chaseTest) {
     "text" : botResponse
   };
   
-  function havoc(chaseTest){
-    if (chaseTest == "Greg"){
+  function havoc(whichOne){
+    if (whichOne == 1){
    
     return "You're a cuck";
       
     }
     else{
-     return chaseTest;
+     return "You idiot, I have no clue what to say";
     }
   }
 
