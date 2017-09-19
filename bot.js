@@ -54,6 +54,7 @@ function respond() {
   } else if(request.text && botRegexTest.test(request.text)){
     this.res.writeHead(200);
     whichOne = 8;
+    console.log("This happened");
     postMessage(request,whichOne);
     this.res.end();
   } else {
