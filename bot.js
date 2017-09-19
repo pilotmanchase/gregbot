@@ -11,6 +11,7 @@ function respond() {
   var botRegexSpam = /^\Spam/;
   var botRegexWTF = /^\wtf/;
   var botRegexLOL = /^\Lol/;
+  var botRegexI = /^\I/;
   
   var whichOne = 0;
   if(request.text && botRegex.test(request.text)) {
@@ -36,6 +37,11 @@ function respond() {
   } else if(request.text && botRegexLOL.test(request.text)){
     this.res.writeHead(200);
     whichOne = 5;
+    postMessage(request,whichOne);
+    this.res.end();
+  } else if(request.text && botRegexI.test(request.text)){
+    this.res.writeHead(200);
+    whichOne = 6;
     postMessage(request,whichOne);
     this.res.end();
   } else {
@@ -99,6 +105,8 @@ if (whichOne == 3){
      return "Don't question me, bitch"; 
     }  else if(whichOne == 5){
      return "Who you laughing at you cuck?!"; 
+    }  else if(whichOne == 6){
+     return "No one give even the slightest shit what you do, say, or think... I mean, let's be real.  Moron."; 
     } else{
      return "You idiot, I have no clue what to say";
     }
