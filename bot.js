@@ -21,7 +21,7 @@ function respond() {
 function postMessage(request) {
   var botResponse, options, body, botReq;
 
-  botResponse = "meme";//cool();
+  botResponse = havoc(botRegex);//"meme";//cool();
 
   options = {
     hostname: 'api.groupme.com',
@@ -33,6 +33,19 @@ function postMessage(request) {
     "bot_id" : botID,
     "text" : botResponse
   };
+  
+  function havoc(botRegex){
+    
+    if botRegex == "Test"{
+   
+    botResponse = "You're a cuck"
+      
+    }
+    else{
+     botResponse = "Nick is a cuck" 
+    }
+    
+  }
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
