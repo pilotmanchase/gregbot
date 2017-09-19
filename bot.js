@@ -18,7 +18,7 @@ function respond() {
   }
 }
 
-function postMessage(request) {
+function postMessage(request,botRegex) {
   var botResponse, options, body, botReq;
 
   botResponse = havoc(botRegex);//"meme";//cool();
