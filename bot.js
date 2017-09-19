@@ -46,21 +46,11 @@ function postMessage(request,whichOne) {
     path: '/v3/bots/post',
     method: 'POST'
   };
-  if(whichOne == 3){
-    body = {
-      "bot_id" : botID,
-      "text" : botResponse
-      "attachments" : [
-    {
-      "type"  : "image",
-      "url"   : "http://socialnewsdaily.com/wp-content/uploads/2014/05/rick-astley-rickrolling.jpg"
-    }
-      ] 
-    };
-  }
+  
   body = {
     "bot_id" : botID,
     "text" : botResponse
+    
   };
   
   function havoc(whichOne){
