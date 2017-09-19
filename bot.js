@@ -50,7 +50,7 @@ function postMessage(request,whichOne) {
       
     }
     else{
-     return "You idiot, I have no clue what to say";
+     return "You idiot, I have no clue what to say" + whichOne;
     }
   }
 
