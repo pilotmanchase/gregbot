@@ -21,7 +21,7 @@ function respond() {
 function postMessage(request,botRegex) {
   var botResponse, options, body, botReq;
 
-  botResponse = havoc(botRegex);//"meme";//cool();
+  botResponse = "meme";//havoc(botRegex);//"meme";//cool();
 
   options = {
     hostname: 'api.groupme.com',
