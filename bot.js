@@ -9,7 +9,7 @@ function respond() {
       botRegex = /^\Greg/;///^\/cool guy$/;
   var botRegexTest = /^\Nick/;
   var botRegexSpam = /^\Spam/;
-  var botRegexWTF = /^\WTF/;
+  var botRegexWTF = /^\Damn/;
   var botRegexLOL = /^\Lol/;
   
   var whichOne = 0;
