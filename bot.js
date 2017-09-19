@@ -9,6 +9,8 @@ function respond() {
       botRegex = /^\Greg/;///^\/cool guy$/;
   var botRegexTest = /^\Nick/;
   var botRegexSpam = /^\Spam/;
+  var botRegexWTF = /^\Wtf/;
+  var botRegexLOL = /^\Lol/;
   
   var whichOne = 0;
   if(request.text && botRegex.test(request.text)) {
@@ -22,14 +24,20 @@ function respond() {
     postMessage(request,whichOne);
     this.res.end();
   } else if(request.text && botRegexSpam.test(request.text)){
-    //for (var i = 0; i < 20000; i++){
     this.res.writeHead(200);
     whichOne = 3;
     spam(request, whichOne, 10);
-    //postMessage(request,whichOne);
     this.res.end();
-    //}
-    
+  } else if(request.text && botRegexWTF.test(request.text)){
+    this.res.writeHead(200);
+    whichOne = 4;
+    postMessage(request,whichOne);
+    this.res.end();
+  } else if(request.text && botRegexLOL.test(request.text)){
+    this.res.writeHead(200);
+    whichOne = 5;
+    postMessage(request,whichOne);
+    this.res.end();
   } else {
     console.log("don't care");
     //this.res.writeHead(200);
@@ -87,8 +95,11 @@ if (whichOne == 3){
      return "Yeah, that Nick guy is a real cuck"; 
     } else if(whichOne == 3){
      return "GET RICK ROLLED"; 
-    }
-    else{
+    } else if(whichOne == 4){
+     return "Don't question me, bitch"; 
+    }  else if(whichOne == 5){
+     return "Who you laughing at you cuck?!"; 
+    } else{
      return "You idiot, I have no clue what to say";
     }
   };
