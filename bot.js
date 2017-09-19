@@ -13,6 +13,7 @@ function respond() {
   var botRegexLOL = /^\Lol/;
   var botRegexI = /^\I/;
   var botRegexThanks = /^\Thank/;
+  var botRegexTest = /^\Test/;
   
   var whichOne = 0;
   if(request.text && botRegex.test(request.text)) {
@@ -50,6 +51,11 @@ function respond() {
     whichOne = 7;
     postMessage(request,whichOne);
     this.res.end();
+  } else if(request.text && botRegexTest.test(request.text)){
+    this.res.writeHead(200);
+    whichOne = 8;
+    postMessage(request,whichOne);
+    this.res.end();
   } else {
     console.log("don't care");
     //this.res.writeHead(200);
@@ -71,7 +77,7 @@ function spam (request, whichOne, i) {
 function postMessage(request,whichOne) {
   var botResponse, options, body, botReq;
 
-  botResponse = havoc(whichOne);//"meme";//cool();
+  botResponse = havoc(whichOne,request);//"meme";//cool();
 
   options = {
     hostname: 'api.groupme.com',
@@ -98,7 +104,7 @@ if (whichOne == 3){
   }
 }
   
-  function havoc(whichOne){ //Controls what Greg says
+  function havoc(whichOne, results){ //Controls what Greg says
     if (whichOne == 1){  //Responce to Greg
     return "You're a cuck";     
     } else if(whichOne == 2){ //response to "Nick"
@@ -122,6 +128,8 @@ if (whichOne == 3){
       }
     } else if(whichOne == 7){
       return "Yeah, no problem asshole...";
+    } else if(whichOne == 7){
+      return results;
     } else{
      return "You idiot, I have no clue what to say";
     }
