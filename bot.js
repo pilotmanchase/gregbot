@@ -8,7 +8,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
   var botRegexTest = /^\Nick/;
-  var spam = /^\spam/;
+  var spam = /^\Spam/;
   
   var whichOne = 0;
   if(request.text && botRegex.test(request.text)) {
@@ -23,7 +23,7 @@ function respond() {
     this.res.end();
   } else if(request.text && spam.test(request.text)){
     this.res.writeHead(200);
-    whichOne = "spam";
+    whichOne = 3;
     postMessage(request,whichOne);
     this.res.end();
     
@@ -59,7 +59,7 @@ function postMessage(request,whichOne) {
       
     } else if(whichOne == 2){
      return "Yeah, that Nick guy is a real cuck"; 
-    } else if(whichOne == "spam"){
+    } else if(whichOne == 3){
      return "GET RICK ROLLED"; 
     }
     else{
