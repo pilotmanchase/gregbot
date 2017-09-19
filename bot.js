@@ -12,6 +12,7 @@ function respond() {
   var botRegexWTF = /^\wtf/;
   var botRegexLOL = /^\Lol/;
   var botRegexI = /^\I/;
+  var botRegexThanks = /^\Thank/;
   
   var whichOne = 0;
   if(request.text && botRegex.test(request.text)) {
@@ -42,6 +43,11 @@ function respond() {
   } else if(request.text && botRegexI.test(request.text)){
     this.res.writeHead(200);
     whichOne = 6;
+    postMessage(request,whichOne);
+    this.res.end();
+  } else if(request.text && botRegexThanks.test(request.text)){
+    this.res.writeHead(200);
+    whichOne = 7;
     postMessage(request,whichOne);
     this.res.end();
   } else {
@@ -114,6 +120,8 @@ if (whichOne == 3){
       } else {
        return "I litterally could not care less... dumbass..."; 
       }
+    } else if(whichOne == 7){
+      return "Yeah, no problem asshole...";
     } else{
      return "You idiot, I have no clue what to say";
     }
