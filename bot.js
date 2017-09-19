@@ -5,11 +5,11 @@ var botID = process.env.BOT_ID;
 
 var chaseTest = "You moron, nothing is saved in this variable";
 
-function respond(chaseTest) {
+function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
   
-      chaseTest = request.text;
+      //chaseTest = request.text;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -25,7 +25,7 @@ function respond(chaseTest) {
 function postMessage(request,chaseTest) {
   var botResponse, options, body, botReq;
 
-  botResponse = havoc(chaseTest);//"meme";//cool();
+  botResponse = havoc();//"meme";//cool();
 
   options = {
     hostname: 'api.groupme.com',
