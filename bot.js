@@ -47,11 +47,22 @@ function postMessage(request,whichOne) {
     method: 'POST'
   };
   
+  //body = {
+    //"bot_id" : botID,
+    //"text" : botResponse
+    
+  //};
+  
   body = {
     "bot_id" : botID,
-    "text" : botResponse
-    
-  };
+    "text" : botResponse,
+    "attachments" : [
+      {
+        "type"  : "image",
+        "url"   : "http://socialnewsdaily.com/wp-content/uploads/2014/05/rick-astley-rickrolling.jpg"
+      }
+    ]
+  }
   
   function havoc(whichOne){
     if (whichOne == 1){
