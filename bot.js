@@ -34,7 +34,7 @@ function postMessage(request,botRegex) {
     "text" : botResponse
   };
   
-  function botResponse = havoc(botRegex){
+  function havoc(botRegex){
     var botResponse;
     if (botRegex == /^\Greg/){
    
@@ -44,7 +44,7 @@ function postMessage(request,botRegex) {
     else{
      botResponse = "Nick is a cuck";
     }
-    
+    cb(botResponse);
   }
 
   console.log('sending ' + botResponse + ' to ' + botID);
