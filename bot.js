@@ -43,7 +43,7 @@ function postMessage(request,chaseTest) {
       
     }
     else{
-     return "Nick is a cuck";
+     return chaseTest;
     }
   }
 
