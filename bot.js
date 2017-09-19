@@ -13,12 +13,12 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     whichOne = 1;
-    postMessage();
+    postMessage(whichOne);
     this.res.end();
   } else if(request.text && botRegexTest.test(request.text)){
     this.res.writeHead(200);
     whichOne = 2;
-    postMessage();
+    postMessage(whichOne);
     this.res.end();
   } else {
     console.log("don't care");
