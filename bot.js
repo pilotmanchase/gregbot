@@ -43,7 +43,7 @@ function spam (request, whichOne, i) {
   setTimeout(function () {
     postMessage(request,whichOne);
     if (--i) {          // If i > 0, keep going
-      spam(i);       // Call the loop again, and pass it the current value of i
+      spam(request, whichOne, i);       // Call the loop again, and pass it the current value of i
     }
   }, 3000);
 }
