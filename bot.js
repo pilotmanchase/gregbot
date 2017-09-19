@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\Greg/;///^\/cool guy$/;
+  var botRegex = /^\Greg/;///^\/cool guy$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -34,7 +34,7 @@ function postMessage(request,botRegex) {
     "text" : botResponse
   };
   
-  function havoc(botRegex){
+  function botResponse = havoc(botRegex){
     var botResponse;
     if (botRegex == /^\Greg/){
    
