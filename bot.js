@@ -22,12 +22,13 @@ function respond() {
     postMessage(request,whichOne);
     this.res.end();
   } else if(request.text && botRegexSpam.test(request.text)){
-    for (var i = 0; i < 20000; i++){
+    //for (var i = 0; i < 20000; i++){
     this.res.writeHead(200);
     whichOne = 3;
-    postMessage(request,whichOne);
+    spam(request, whichOne, 10);
+    //postMessage(request,whichOne);
     this.res.end();
-    }
+    //}
     
   } else {
     console.log("don't care");
@@ -37,6 +38,15 @@ function respond() {
     this.res.end();
   }
 }
+
+(function spam (request, whichOne, i) {
+  setTimeout(function () {
+    postMessage(request,whichOne);
+    if (--i) {          // If i > 0, keep going
+      spam(i);       // Call the loop again, and pass it the current value of i
+    }
+  }, 3000);
+})
 
 function postMessage(request,whichOne) {
   var botResponse, options, body, botReq;
