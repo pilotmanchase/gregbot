@@ -23,6 +23,8 @@ function respond() {
   } else {
     console.log("don't care");
     this.res.writeHead(200);
+    whichOne = 0;
+    postMessage(request,whichOne);
     this.res.end();
   }
 }
@@ -48,9 +50,11 @@ function postMessage(request,whichOne) {
    
     return "You're a cuck";
       
+    } else if(whichOne == 2){
+     return "Yeah, that Nick guy is a real cuck"; 
     }
     else{
-     return "You idiot, I have no clue what to say" + whichOne;
+     return "You idiot, I have no clue what to say";
     }
   }
 
