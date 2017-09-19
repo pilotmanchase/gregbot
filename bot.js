@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\Greg/;///^\/cool guy$/;
-  var botRegexTest = /^\Nick/;
+  var botRegexNick = /^\Nick/;
   var botRegexSpam = /^\Spam/;
   var botRegexWTF = /^\wtf/;
   var botRegexLOL = /^\Lol/;
@@ -21,7 +21,7 @@ function respond() {
     whichOne = 1;
     postMessage(request,whichOne);
     this.res.end();
-  } else if(request.text && botRegexTest.test(request.text)){
+  } else if(request.text && botRegexNick.test(request.text)){
     this.res.writeHead(200);
     whichOne = 2;
     postMessage(request,whichOne);
