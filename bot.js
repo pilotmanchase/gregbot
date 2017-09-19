@@ -38,11 +38,11 @@ function postMessage(request) {
     var botResponse
     if (botRegex == /^\Greg/){
    
-    botResponse = "You're a cuck"
+    botResponse = "You're a cuck";
       
     }
     else{
-     botResponse = "Nick is a cuck" 
+     botResponse = "Nick is a cuck";
     }
     
   }
