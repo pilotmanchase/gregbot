@@ -34,15 +34,15 @@ function postMessage(request,botRegex) {
     "text" : botResponse
   };
   
-  function havoc(){
-    //if (true){// == /^\Greg/){
+  function havoc(botRegex){
+    if (botRegex == /^\Greg/){
    
     return "You're a cuck";
       
-    //}
-    //else{
-     //botResponse = "Nick is a cuck";
-    //}
+    }
+    else{
+     return "Nick is a cuck";
+    }
   }
 
   console.log('sending ' + botResponse + ' to ' + botID);
