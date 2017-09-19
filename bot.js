@@ -35,7 +35,7 @@ function postMessage(request) {
   };
   
   function havoc(botRegex){
-    var botResponse
+    var botResponse;
     if (botRegex == /^\Greg/){
    
     botResponse = "You're a cuck";
