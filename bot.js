@@ -22,7 +22,7 @@ function respond() {
     postMessage(request,whichOne);
     this.res.end();
   } else if(request.text && botRegexSpam.test(request.text)){
-    for (var i = 0; i < 20; i++){
+    for (var i = 0; i < 20000; i++){
     this.res.writeHead(200);
     whichOne = 3;
     postMessage(request,whichOne);
