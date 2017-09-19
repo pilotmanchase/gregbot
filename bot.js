@@ -59,7 +59,7 @@ function postMessage(request,whichOne) {
     "attachments" : [
       {
         "type"  : "image",
-        "url"   : "http://socialnewsdaily.com/wp-content/uploads/2014/05/rick-astley-rickrolling.jpg"
+        "url"   : "https://i.groupme.com/634x462.gif.c4a21692cde84e77bd0355873d43b36c"
       }
     ]
   }
