@@ -22,12 +22,12 @@ function respond() {
     postMessage(request,whichOne);
     this.res.end();
   } else if(request.text && botRegexSpam.test(request.text)){
+    for (var i = 0; i < 5; i++){
     this.res.writeHead(200);
     whichOne = 3;
-    for (var i = 0; i < 5; i++){
     postMessage(request,whichOne);
-    }
     this.res.end();
+    }
     
   } else {
     console.log("don't care");
